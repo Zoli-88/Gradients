@@ -1,0 +1,49 @@
+.section-component {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  font-size: 32px;
+
+  h2 {
+    font-weight: 200;
+  }
+
+  &.one {
+    background-image: linear-gradient(to bottom,
+      $blue-200,
+      $blue-300
+    );
+  }
+
+  &.two {
+    background-image: linear-gradient(to bottom,
+      $blue-300,
+      $blue-400
+    );
+  }
+
+  &.three {
+    background-image: linear-gradient(to bottom,
+      $blue-400,
+      $blue-500
+    );
+  }
+
+  &.four {
+    background-image: linear-gradient(to bottom,
+      $blue-500,
+      $blue-600
+    );
+  }
+
+  &.five {
+    background-image: linear-gradient(to bottom,
+      $blue-600,
+      $blue-700
+    );
+  }
+}
