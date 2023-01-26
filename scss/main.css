@@ -43,4 +43,11 @@ main {
 }
 .section-component.five {
   background-image: linear-gradient(to bottom, #518eb1, #4e86a7);
+}
+
+h2 {
+  --sectionTitleText: white;
+  color: var(--sectionTitleText);
+  padding: 2px 14px;
+  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */
