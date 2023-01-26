@@ -7,6 +7,16 @@ const sectionColors = {
   one: "#4e86a7",
 }
 
+function changeSectionColors() {
+  const sectionTitles = document.querySelectorAll("h2");
+  sectionTitles.forEach(sectionTitle => {
+    sectionTitle.style.setProperty("--sectionTitleText", sectionColors[sectionTitle.getAttribute("id")]);
+    sectionTitle.style.setProperty("background", `rgba(255, 255, 255, .${sectionTitle.dataset.alpha})`);
+  });
+}
+
+changeSectionColors();
+
 // const observer = new IntersectionObserver(
 //   (entries) => {
 //     entries.forEach((entry, index) => {
@@ -20,12 +30,6 @@ const sectionColors = {
 //   }
 // );
 
-const sectionTitles = document.querySelectorAll("h2");
-sectionTitles.forEach(sectionTitle => {
-  // observer.observe(sectionTitle);
-  sectionTitle.style.setProperty("--sectionTitleText", sectionColors[sectionTitle.getAttribute("id")]);
-  sectionTitle.style.setProperty("background", `rgba(255, 255, 255, .${sectionTitle.dataset.alpha})`);
-});
 
 
 // {

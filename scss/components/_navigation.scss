@@ -1,0 +1,29 @@
+.navigation-component {
+  width: 100%;
+  position: fixed;
+  padding: 2rem 1rem;
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+
+    li {
+      margin-left: 1.6rem;
+
+      a {
+        padding: 0 0.5rem;
+      }
+    }
+  }
+
+  .logo {
+    font-size: 3rem;
+    margin-right: auto;
+  }
+}
