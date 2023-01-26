@@ -2,6 +2,8 @@
   width: 100%;
   position: fixed;
   padding: 2rem 1rem;
+  --navBackground: #4e86a7;
+  background: var(--navBackground);
 
   .nav-container {
     display: flex;
