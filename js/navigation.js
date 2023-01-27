@@ -36,14 +36,12 @@ function changeNavBackgroundOnScroll() {
 
   // Events
   function changeNavbarPaddingOnScroll() {
-    window.addEventListener("scroll", function() {
-      console.log("hi");
-//       if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-// console.log(document.style);
-//       } 
-//       else {
-//         navComponent.style.setProperty("padding", "20px");
-//       }
+    document.addEventListener("scroll", function() {
+      if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+        navComponent.style.setProperty("padding", "1rem")}
+        else {
+          navComponent.style.setProperty("padding", "2rem 1rem")
+        }
     });
   }   
   changeNavbarPaddingOnScroll();
