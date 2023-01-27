@@ -1,38 +1,38 @@
 const sectionColors = {
-  six: "#bee9e8ff",
-  five: "#62b6cbff",
-  four: "#5fa8d3ff",
-  three: "#5798bd",
-  two: "#518eb1",
   one: "#4e86a7",
+  two: "#518eb1",
+  three: "#5798bd",
+  four: "#5fa8d3ff",
+  five: "#62b6cbff",
+  six: "#bee9e8ff"
 }
 
-function changeSectionColors() {
+function changeSectionColorsOnScroll() {
   const sectionTitles = document.querySelectorAll("h2");
-  sectionTitles.forEach(sectionTitle => {
+  sectionTitles.forEach((sectionTitle, index) => {
     sectionTitle.style.setProperty("--sectionTitleText", sectionColors[sectionTitle.getAttribute("id")]);
-    sectionTitle.style.setProperty("background", `rgba(255, 255, 255, .${sectionTitle.dataset.alpha})`);
+    sectionTitle.style.setProperty("background", `rgba(255, 255, 255, .${index + 1})`);
   });
 }
 
-changeSectionColors();
-
-// const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry, index) => {
-//       const intersecting = entry.isIntersecting;
-//       console.log(entry)
-//       if (intersecting) {
-//         entry.target.style.setProperty("--sectionTitleText", sectionColors[entry.target.getAttribute("id")]);
-//         entry.target.style.setProperty("background", `rgba(255, 255, 255, .${entry.target.dataset.alpha})`);
-//       }
-//     })
-//   }
-// );
+changeSectionColorsOnScroll();
 
 
+function changeNavBackgroundOnScroll() {
 
-// {
-//   event.target.classList.add(sectionColors[event.target.getAttribute("id")]);
-// }
-// </script>
+  const navComponent = document.querySelector(".navigation-component");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navComponent.style.setProperty("--navBackground", sectionColors[entry.target.getAttribute("id")])
+        }
+      })
+    })
+  const sections = document.querySelectorAll("h2");
+  sections.forEach(section => {
+    observer.observe(section);
+  })
+};
+changeNavBackgroundOnScroll();
