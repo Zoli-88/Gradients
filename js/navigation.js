@@ -27,23 +27,24 @@ function changeNavBackgroundOnScroll() {
         if (entry.isIntersecting) {
           navComponent.style.setProperty("--navBackground", sectionColors[entry.target.getAttribute("id")])
         }
-      })
-    })
+      });
+    });
     sectionTitles.forEach(sectionTitle => {
       observer.observe(sectionTitle);
-    })
+    });
   };
 
   // Events
   function changeNavbarPaddingOnScroll() {
     document.addEventListener("scroll", function() {
       if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-        navComponent.style.setProperty("padding", "1rem")}
-        else {
-          navComponent.style.setProperty("padding", "2rem 1rem")
-        }
+        navComponent.classList.add("nav-scroll-padding");
+      }
+      else {
+        navComponent.classList.remove("nav-scroll-padding");
+      }
     });
-  }   
+  }    
   changeNavbarPaddingOnScroll();
 
   // On load

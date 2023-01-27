@@ -1,9 +1,14 @@
 .navigation-component {
   width: 100%;
   position: fixed;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
+  transition: padding .2s ease-in-out;
   --navBackground: #4e86a7;
   background: var(--navBackground);
+  
+  &.nav-scroll-padding {
+    padding: 1rem;  
+  }
 
   .nav-container {
     display: flex;
