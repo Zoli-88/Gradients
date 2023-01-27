@@ -5,12 +5,6 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  overflow: hidden;
-}
-
-main {
-  overflow-y: auto;
-  height: 100vh;
+html {
   scroll-snap-type: y mandatory;
 }
