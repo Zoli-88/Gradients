@@ -50,7 +50,8 @@ function changeNavBackgroundOnScroll() {
         navComponent.classList.remove("nav-scroll-padding");
       }
     });
-  }    
+  }
+  
   changeNavbarPaddingOnScroll();
 
   // On load
