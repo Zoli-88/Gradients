@@ -33,5 +33,16 @@
     font-size: 3rem;
     margin-right: auto;
     padding: 0 0.5rem;
+  
+    &.bounce {
+      animation: bounce 2s ease 1;
+      
+      @keyframes bounce {
+          0% { transform:translateY(0%); }
+          25% { transform:translateY(-20%); }
+          50% { transform:translateY(0%); }
+          100% { transform:translateY(0%); }
+      }
+    }
   }
 }

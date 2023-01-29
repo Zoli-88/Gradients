@@ -33,7 +33,7 @@ function changeNavBackgroundOnScroll() {
       observer.observe(sectionTitle);
     });
   };
-
+  
   // Events
   function changeNavbarPaddingOnScroll() {
     document.addEventListener("scroll", function() {
