@@ -11,6 +11,7 @@ const sectionColors = {
 // DOM elements
 const sectionTitles = document.querySelectorAll("h2");
 const navComponent = document.querySelector(".navigation-component");
+const logo = document.querySelector(".logo");
 
 // Functions
 function changeSectionColorsOnScroll() {
@@ -25,7 +26,12 @@ function changeNavBackgroundOnScroll() {
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          navComponent.style.setProperty("--navBackground", sectionColors[entry.target.getAttribute("id")])
+          navComponent.style.setProperty("--navBackground", sectionColors[entry.target.getAttribute("id")]);
+          if (entry.target.id === "one") {
+            logo.classList.add("bounce");
+          } else {
+              logo.classList.remove("bounce");
+          }
         }
       });
     });
