@@ -8,8 +8,12 @@
   font-size: 4rem;
 
   h2 {
-    font-weight: 200;
-  }
+  font-weight: 200;
+  --sectionTitleText: white;
+  color: var(--sectionTitleText);
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+}
 
   &.one {
     background-image: linear-gradient(to bottom,
@@ -45,11 +49,4 @@
       $blue-700
     );
   }
-}
-
-h2 {
-  --sectionTitleText: white;
-  color: var(--sectionTitleText);
-  padding: 0.2rem 1rem;
-  border-radius: 0.5rem;
 }
