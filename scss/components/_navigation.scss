@@ -14,15 +14,6 @@
   a {
     padding: 0 0.5rem;
   }
-  
-  li, a {
-    transition: all .2s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
-      font-weight: $semi-bold;
-    }
-  }  
 
   &.nav-scroll-padding {
     padding: 1rem;  
@@ -36,13 +27,39 @@
   .nav-links {
     display: flex;
     justify-content: space-between;
-    list-style-type: none;      
+    list-style-type: none;
+
+    a {
+      position: relative;
+      
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0.1rem;
+        position: absolute;
+        top: 1.5rem;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        transition: width 0.3s ease 0s;
+      }
+
+      &:hover::after {
+        width: 80%;
+      }
+    }
   }
 
   .logo {
     font-size: 3rem;
     margin-right: auto;
     padding: 0 0.5rem;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     &.bounce {
       animation: bounce 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1;
@@ -51,7 +68,7 @@
           0% { transform:translateY(0%); }
           70% {transform: translateY(-15%); }
           75% {transform: translateY(0%); }
-          85% {transform: translateY(-7%); }
+          85% {transform: translateY(-5%); }
           90% {transform: translateY(0%); }
           100% { transform:translateY(0%); }    
       }

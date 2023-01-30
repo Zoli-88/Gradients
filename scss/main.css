@@ -75,8 +75,8 @@ a {
   transition: padding .2s ease-in-out;
   --navBackground: #4e86a7;
   background: var(--navBackground);
-  -webkit-box-shadow: 0 6px 5px 0 rgba(61, 62, 71, 0.69);
-          box-shadow: 0 6px 5px 0 rgba(61, 62, 71, 0.69);
+  -webkit-box-shadow: 0 6px 5px 0 rgba(21, 26, 71, 0.69);
+          box-shadow: 0 6px 5px 0 rgba(21, 26, 71, 0.69);
 }
 
 .navigation-component li {
@@ -85,17 +85,6 @@ a {
 
 .navigation-component a {
   padding: 0 0.5rem;
-}
-
-.navigation-component li, .navigation-component a {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.navigation-component li:hover, .navigation-component a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  font-weight: 600;
 }
 
 .navigation-component.nav-scroll-padding {
@@ -121,10 +110,39 @@ a {
   list-style-type: none;
 }
 
+.navigation-component .nav-links a {
+  position: relative;
+}
+
+.navigation-component .nav-links a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0.1rem;
+  position: absolute;
+  top: 1.5rem;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #fff;
+  -webkit-transition: width 0.3s ease 0s;
+  transition: width 0.3s ease 0s;
+}
+
+.navigation-component .nav-links a:hover::after {
+  width: 80%;
+}
+
 .navigation-component .logo {
   font-size: 3rem;
   margin-right: auto;
   padding: 0 0.5rem;
+}
+
+.navigation-component .logo:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .navigation-component .logo.bounce {
@@ -146,8 +164,8 @@ a {
             transform: translateY(0%);
   }
   85% {
-    -webkit-transform: translateY(-7%);
-            transform: translateY(-7%);
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
   }
   90% {
     -webkit-transform: translateY(0%);
@@ -173,8 +191,8 @@ a {
             transform: translateY(0%);
   }
   85% {
-    -webkit-transform: translateY(-7%);
-            transform: translateY(-7%);
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
   }
   90% {
     -webkit-transform: translateY(0%);
