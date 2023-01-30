@@ -8,6 +8,8 @@ const sectionColors = {
   six: "#bee9e8ff"
 }
 
+const SCROLL_TOP_OFFSET = 100;
+
 // DOM elements
 const sectionTitles = document.querySelectorAll("h2");
 const navComponent = document.querySelector(".navigation-component");
@@ -16,7 +18,7 @@ const logo = document.querySelector(".logo");
 // Functions
 function changeSectionColorsOnScroll() {
   sectionTitles.forEach((sectionTitle, index) => {
-    sectionTitle.style.setProperty("--sectionTitleText", sectionColors[sectionTitle.getAttribute("id")]);
+    sectionTitle.style.setProperty("--sectionTitleText", sectionColors[sectionTitle.dataset.headingNumber]);
     sectionTitle.style.setProperty("background", `rgba(255, 255, 255, .${index + 1})`);
   });
 }
@@ -26,11 +28,11 @@ function changeNavBackgroundOnScroll() {
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          navComponent.style.setProperty("--navBackground", sectionColors[entry.target.getAttribute("id")]);
-          if (entry.target.id === "one") {
+          navComponent.style.setProperty("--navBackground", sectionColors[entry.target.dataset.headingNumber]);
+          if (entry.target.dataset.headingNumber === "one") {
             logo.classList.add("bounce");
           } else {
-              logo.classList.remove("bounce");
+            logo.classList.remove("bounce");
           }
         }
       });
@@ -43,7 +45,7 @@ function changeNavBackgroundOnScroll() {
   // Events
   function changeNavbarPaddingOnScroll() {
     document.addEventListener("scroll", function() {
-      if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      if (document.body.scrollTop > SCROLL_TOP_OFFSET || document.documentElement.scrollTop > SCROLL_TOP_OFFSET) {
         navComponent.classList.add("nav-scroll-padding");
       }
       else {

@@ -35,7 +35,7 @@
   .nav-links {
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
+    list-style-type: none;      
   }
 
   .logo {
@@ -44,13 +44,15 @@
     padding: 0 0.5rem;
 
     &.bounce {
-      animation: bounce 2s ease 1;
+      animation: bounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1;
       
       @keyframes bounce {
           0% { transform:translateY(0%); }
           25% { transform:translateY(-20%); }
           50% { transform:translateY(0%); }
-          100% { transform:translateY(0%); }
+          70% {transform: translateY(-10%); }
+          80% {transform: translateY(0%); }
+          100% { transform:translateY(0%); }    
       }
     }
   }

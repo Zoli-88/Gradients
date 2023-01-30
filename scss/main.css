@@ -87,8 +87,8 @@ a {
   padding: 0 0.5rem;
 }
 .navigation-component .logo.bounce {
-  -webkit-animation: bounce 2s ease 1;
-          animation: bounce 2s ease 1;
+  -webkit-animation: bounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1;
+          animation: bounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1;
 }
 @-webkit-keyframes bounce {
   0% {
@@ -98,6 +98,12 @@ a {
     transform: translateY(-20%);
   }
   50% {
+    transform: translateY(0%);
+  }
+  70% {
+    transform: translateY(-10%);
+  }
+  80% {
     transform: translateY(0%);
   }
   100% {
@@ -112,6 +118,12 @@ a {
     transform: translateY(-20%);
   }
   50% {
+    transform: translateY(0%);
+  }
+  70% {
+    transform: translateY(-10%);
+  }
+  80% {
     transform: translateY(0%);
   }
   100% {
