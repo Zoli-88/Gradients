@@ -8,7 +8,7 @@ const sectionColors = {
   six: "#bee9e8ff"
 }
 
-const SCROLL_TOP_OFFSET = 100;
+const SCROLL_TOP_DISTANCE = 100;
 
 // DOM elements
 const sectionTitles = document.querySelectorAll("h2");
@@ -45,7 +45,7 @@ function changeNavBackgroundOnScroll() {
   // Events
   function changeNavbarPaddingOnScroll() {
     document.addEventListener("scroll", function() {
-      if (document.body.scrollTop > SCROLL_TOP_OFFSET || document.documentElement.scrollTop > SCROLL_TOP_OFFSET) {
+      if (document.body.scrollTop > SCROLL_TOP_DISTANCE || document.documentElement.scrollTop > SCROLL_TOP_DISTANCE) {
         navComponent.classList.add("nav-scroll-padding");
       }
       else {
