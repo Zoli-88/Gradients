@@ -1,16 +1,32 @@
 .section-component {
   height: 100vh;
+  padding: 0 2rem;
   scroll-snap-align: start;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   
   h2 {
+    margin-top: 20vh;
     font-weight: 200;
     --sectionTitleText: white;
     color: var(--sectionTitleText);
     padding: 0.2rem 1rem;
     border-radius: 0.5rem;
+  }
+
+  h2, h3, p {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    transform: translateX(-100vw);
+    transition: transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  .slide-in {
+    transform: translateX(0%);
   }
 
   &.one {

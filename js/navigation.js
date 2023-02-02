@@ -11,18 +11,11 @@ const sectionColors = {
 const SCROLL_TOP_DISTANCE = 100;
 
 // DOM elements
-const sectionTitles = document.querySelectorAll("h2");
 const navComponent = document.querySelector(".navigation-component");
 const logo = document.querySelector(".logo");
+const sectionTitles = document.querySelectorAll("h2");
 
 // Functions
-function changeSectionColorsOnScroll() {
-  sectionTitles.forEach((sectionTitle, index) => {
-    sectionTitle.style.setProperty("--sectionTitleText", sectionColors[sectionTitle.dataset.headingNumber]);
-    sectionTitle.style.setProperty("background", `rgba(255, 255, 255, .${index + 1})`);
-  });
-}
-
 function changeNavBackgroundOnScroll() {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -57,6 +50,5 @@ function changeNavBackgroundOnScroll() {
   changeNavbarPaddingOnScroll();
 
   // On load
-  changeSectionColorsOnScroll();
   changeNavBackgroundOnScroll();
   
