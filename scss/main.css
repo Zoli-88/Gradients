@@ -63,9 +63,19 @@ h2 {
   transition: transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
+.section-component p {
+  opacity: 0;
+  -webkit-transition: opacity 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .section-component .slide-in {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
+}
+
+.section-component .fade-in {
+  opacity: 1;
 }
 
 .section-component.one {
@@ -103,6 +113,7 @@ h2 {
   background: var(--navBackground);
   -webkit-box-shadow: 0 6px 5px 0 rgba(21, 26, 71, 0.69);
           box-shadow: 0 6px 5px 0 rgba(21, 26, 71, 0.69);
+  z-index: 1;
 }
 
 .navigation-component li {
